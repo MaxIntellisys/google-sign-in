@@ -1,10 +1,17 @@
-function onSignIn(googleUser) {
+// const token = 'eyJhbGciOiJSUzI1NiIsImtpZCI6IjUzYzY2YWFiNTBjZmRkOTFhMTQzNTBhNjY0ODJkYjM4MDBjODNjNjMiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiIzMjU1NTk0MDU1OS5hcHBzLmdvb2dsZXVzZXJjb250ZW50LmNvbSIsImF1ZCI6IjMyNTU1OTQwNTU5LmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwic3ViIjoiMTA5MTMwOTczMTkyMDk0NDY0MDYxIiwiaGQiOiJpbnRlbGxpc3lzLmNvbS5kbyIsImVtYWlsIjoibXNpZXJyYUBpbnRlbGxpc3lzLmNvbS5kbyIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJhdF9oYXNoIjoiMG1TOGZQRkRpSTlHRElPbk5GaUhlUSIsImlhdCI6MTU4NTM0OTIxMywiZXhwIjoxNTg1MzUyODEzfQ.CQ08dbXKrvZxXe7A8DtmeGUSYpfHrTt1TxpLRCFMXIntP0Fn3k2UWPTBMwaRN3XDccuaACpAMONVqh2496SjmF7frybrwBDVMwzyOTDnnUHBZFfiCCMqKl0etkRvStKmFp5d2z1xLMbZlvy5Q83zcezw1bD-2e6XAzkB5uCEgLOiT8w-Ao8sqw3iB0zpzos8wn5iJbmuccRA0icFMsgZx74XeGeQT6JASB4C0dfqdOevoGXbXuMltyJ66aZEVsOnbAKWpHnSCwJg897as1BMnHv_ig29m0b3rE2Ma09r8CFomaDLcfWOJPWgiUVXcaih7ersHBsOpcgrgmOezK2Raw';
+// const token2 = 'eyJhbGciOiJSUzI1NiIsImtpZCI6IjUzYzY2YWFiNTBjZmRkOTFhMTQzNTBhNjY0ODJkYjM4MDBjODNjNjMiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJhY2NvdW50cy5nb29nbGUuY29tIiwiYXpwIjoiMTk4NDE5ODE2MTktaGVqb3RtY2VqZmpmaGQ3Y3E4N2NtMWNtNzU1dTZqcHMuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiIxOTg0MTk4MTYxOS1oZWpvdG1jZWpmamZoZDdjcTg3Y20xY203NTV1Nmpwcy5hcHBzLmdvb2dsZXVzZXJjb250ZW50LmNvbSIsInN1YiI6IjEwOTEzMDk3MzE5MjA5NDQ2NDA2MSIsImhkIjoiaW50ZWxsaXN5cy5jb20uZG8iLCJlbWFpbCI6Im1zaWVycmFAaW50ZWxsaXN5cy5jb20uZG8iLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiYXRfaGFzaCI6ImZURno4RV9IM3pzUUljRmcweURLelEiLCJuYW1lIjoiTWF4aW1vIEFsZWphbmRybyBTaWVycmEiLCJwaWN0dXJlIjoiaHR0cHM6Ly9saDYuZ29vZ2xldXNlcmNvbnRlbnQuY29tLy1NdkZtYS04N1FZMC9BQUFBQUFBQUFBSS9BQUFBQUFBQUFBQS9BQUtXSkpQOEFzRWc5VHlyUUM5SndRLTR4TWV3ZWtIdjBnL3M5Ni1jL3Bob3RvLmpwZyIsImdpdmVuX25hbWUiOiJNYXhpbW8gQWxlamFuZHJvIiwiZmFtaWx5X25hbWUiOiJTaWVycmEiLCJsb2NhbGUiOiJlbiIsImlhdCI6MTU4NTM1MDE0NCwiZXhwIjoxNTg1MzUzNzQ0LCJqdGkiOiJlZGI2MDVlN2NmM2Y2YWNmOGE5MTk4OTczYzM0NzRkMDQ1Yjc4MTY5In0.lqcKfgj_XShKx_lGmH3ZxekNBgWn-CGVpDXwiziK8RW6P8U5LWFhX0r0il0cX3ACYrlggUbCL2iOJhBIhCPNj19IHUfwx_VvdnjRPi-JAtOx9KZ87UUn4M-LGLYnj6d28K9IMst4oqhYMXrewZYlC9jZrOHD3DQSHY9_uL5vkUQIBj8e_Vmk3D6tuUpHsz1TosJP8Ez9-uNCr7W9tnnZQ--soJ8-XIW3RFSChVW1JW1p57fJ-Baez23Ng7xohto2iyeeoph-WDXk15XQZ9X1yX_iGQVUq1ns_3YH7x-9wH2UMMs3w82Zq2ICk6noymBhlzoDYnRkBzY3z9lOrZK30w'
+const token3 =
+  "eyJhbGciOiJSUzI1NiIsImtpZCI6IjUzYzY2YWFiNTBjZmRkOTFhMTQzNTBhNjY0ODJkYjM4MDBjODNjNjMiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiIzMjU1NTk0MDU1OS5hcHBzLmdvb2dsZXVzZXJjb250ZW50LmNvbSIsImF1ZCI6IjMyNTU1OTQwNTU5LmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwic3ViIjoiMTA5MTMwOTczMTkyMDk0NDY0MDYxIiwiaGQiOiJpbnRlbGxpc3lzLmNvbS5kbyIsImVtYWlsIjoibXNpZXJyYUBpbnRlbGxpc3lzLmNvbS5kbyIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJhdF9oYXNoIjoiNWloZXFqRnY3UjQ5S1JScE9IUzNxQSIsImlhdCI6MTU4NTM1MDMzOCwiZXhwIjoxNTg1MzUzOTM4fQ.RoREII-Z0_cIr1xUdHMYCFggZmiMOMPbpQbS2TFUVIKNpTl7ldFmYu2D_gA8v_o_qu_N777POm03z0UTVZbw2liGxs8aS3C0rr_X61w3izPK8xX2mCxhEILxO03WD9Id-wnz60fv04aQPNthjp5KWp7PRGZC7l2ETJxfCqEYac3_E15HykXC-JDh9k2ednnruazH-vVHfft_GsyE35IEqZ0YlIzu77vOYZzKG0yc5bwy0dVGWMkNTmWkcRj2i_PNWKk2T-0F-74FCBO3iEJIWBukSbEqAepW4WCQaLmJJFhCxPhY06cFPWR6jhaJZrxr5v8D-nHWNRCVGvhglBiWQg";
+
+async function onSignIn(googleUser) {
   const profile = googleUser.getBasicProfile();
 
-  console.log("ID: " + profile.getId()); // Do not send to your backend! Use an ID token instead.
-  console.log("Name: " + profile.getName());
-  console.log("Image URL: " + profile.getImageUrl());
-  console.log("Email: " + profile.getEmail()); // This is null if the 'email' scope is not present.
+  // console.log(googleUser.uc.id_token)
+
+  // console.log("ID: " + profile.getId());
+  // console.log("Name: " + profile.getName());
+  // console.log("Image URL: " + profile.getImageUrl());
+  // console.log("Email: " + profile.getEmail());
 }
 
 function signOut() {
@@ -13,3 +20,23 @@ function signOut() {
     console.log("User signed out.");
   });
 }
+
+// 19841981619-hejotmcejfjfhd7cq87cm1cm755u6jps.apps.googleusercontent.com metrics apikey
+
+const helloWorld = document.getElementById("function-jorge");
+
+helloWorld.addEventListener("click", async () => {
+  const options = {
+    method: "GET",
+    mode: "no-cors",
+    headers: { Authorization: `Bearer ${token3}` }
+  };
+
+  const res = await fetch(
+    "https://us-central1-metricas-239920.cloudfunctions.net/function-1",
+    options
+  );
+  const data = await res.json();
+
+  console.log(data);
+});

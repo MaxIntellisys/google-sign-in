@@ -1,19 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Google Sign In</title>
+
     <script src="https://apis.google.com/js/platform.js" async defer></script>
-    <meta name="google-signin-client_id" content="112016315605-9ccgbdlohgqj2r2rt64gu3i6nb9j5k6g.apps.googleusercontent.com">
-</head>
-<body>
-    <h1>Hello Max</h1>
+    <meta
+      name="google-signin-client_id"
+      content="19841981619-hejotmcejfjfhd7cq87cm1cm755u6jps.apps.googleusercontent.com"
+    />
+  </head>
+  <body>
+    <h1>Google Sign In App</h1>
 
     <div class="g-signin2" data-onsuccess="onSignIn"></div>
-
+    <br />
     <a href="#" onclick="signOut();">Sign out</a>
+    <hr />
+    <button id="function-jorge">function-1</button>
 
     <script src="sign-in-test.js"></script>
-</body>
+  </body>
 </html>
